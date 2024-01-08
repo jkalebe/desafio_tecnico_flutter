@@ -1,16 +1,36 @@
-# dictionary_app
+# dictionary_APP
 
-Aplicativos para exibir termos em inglês.
+## Descrição
+Aplicativo para listar palavras em inglês, utilizando como base a API Free Dictionary API.
 
-## Getting Started
+## Tecnologias Utilizadas
+- Framework: Flutter
 
-This project is a starting point for a Flutter application.
+## Instalação e Uso
 
-A few resources to get you started if this is your first Flutter project:
+Siga estas instruções para instalar e usar o projeto em sua máquina local.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Instalação
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone o repositório:
+```
+https://github.com/jkalebe/desafio_tecnico_flutter
+```
+3. Entre no diretório do projeto:
+```
+cd nome-do-projeto
+```
+5. Execute o comando para obter todas as dependências:
+   ```
+   flutter pub get
+   ```
+
+### Executando o Aplicativo
+Certifique-se de que um emulador esteja rodando ou que um dispositivo esteja conectado.
+Execute o aplicativo:
+```
+flutter run
+```
+
+## Challenge by Coodesh
+Este projeto foi desenvolvido como parte de um desafio proposto pela Coodesh. <a href="https://lab.coodesh.com/jeremiaskalebe/dictionary">Mais informações sobre o desafio.</a>
