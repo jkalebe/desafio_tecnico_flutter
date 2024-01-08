@@ -19,7 +19,7 @@ class MeaningsWidget extends StatelessWidget {
             children: [
               Text(
                 '${meaning.partOfSpeech} - ',
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),

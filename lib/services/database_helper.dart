@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io' as io;
-import 'dart:io';
 import 'package:dictionary_app/models/word.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
@@ -63,28 +62,6 @@ class DatabaseHelper {
   Future<void> close() async {
     var dbClient = await db;
     return await dbClient.close();
-  }
-
-  Future<void> deleteDatabase() async {
-    await close();
-    Directory documentsDirectory = await getApplicationDocumentsDirectory();
-    String databasePath =
-    join(documentsDirectory.path, 'DATABASE_COLETOR.db');
-
-    bool exists = await File(databasePath).exists();
-    if (exists) {
-      await File(databasePath).delete();
-    }
-  }
-
-  Future<int> insertWord(Word word) async {
-    final dbClient = await db;
-    int res = await dbClient.insert(
-      'word',
-      word.toJson(),
-      conflictAlgorithm: ConflictAlgorithm.replace,
-    );
-    return res;
   }
 
   Future<int> updateWord(Word word) async {
@@ -167,24 +144,6 @@ class DatabaseHelper {
 
   void dispose() {
     _wordsStreamController.close();
-  }
-
-  Future<int> deleteWordTable(String word) async {
-    final dbClient = await db;
-    try {
-      int deletedRows = await dbClient.delete(
-        'word',
-        where: 'word = ?',
-        whereArgs: [word],
-      );
-
-      await getAllWords();
-
-      return deletedRows;
-    } catch (e) {
-      print("Erro ao deletar word: $e");
-      throw e;
-    }
   }
 
 }
